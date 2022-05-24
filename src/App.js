@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import cokie from './cokie.jpg'
+import './App.css'
+const App = () => {
+  const openPop = () =>{
+    document.querySelector('.cookies-box').classList.add('active');
+  }
+  const closePop = () =>{
+    document.querySelector('.cookies-box').classList.remove('active');
+  }
+  return(
+    <>
+<div className="container">
+  <button className="open_btn" onClick={openPop}>popup</button>
+</div>
+<div className="cookies-box">
+  <span className="close_btn" onClick={closePop}>&times;</span>
+  <img src={cokie} alt="cokies"/>
+  <h3>cookies and privacy</h3>
+  <p>this website use cookies to ensure you to get the best experience on our website</p>
+  <a href="#"  className="accept">accept all</a>
+  <a href="#" className="setting">Coustmize settings</a>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+</div>
+    </>
+  )
 }
-
 export default App;
